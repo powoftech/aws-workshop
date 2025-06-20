@@ -1,0 +1,6 @@
+package-lock.json
+
+# Test coverage directory
+coverage
+dist
+generated

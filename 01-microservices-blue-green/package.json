@@ -1,0 +1,18 @@
+{
+  "name": "microservices-blue-green",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n \"Frontend,Backend\" -c \"#ac7ea7,#fcce81\" \"npm run dev --workspace=packages/frontend\" \"npm run dev --workspace=packages/backend\"",
+    "build": "concurrently -n \"Frontend,Backend\" -c \"#ac7ea7,#fcce81\" \"npm run build --workspace=packages/frontend\" \"npm run build --workspace=packages/backend\"",
+    "start": "concurrently -n \"Frontend,Backend\" -c \"#ac7ea7,#fcce81\" \"npm run start --workspace=packages/frontend\" \"npm run start --workspace=packages/backend\"",
+    "format": "prettier --write \"packages/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "prettier": "^3.5.3",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "prettier-plugin-tailwindcss": "^0.6.13"
+  }
+}
